@@ -26,7 +26,7 @@ $header__icon--hover--color     : $header__brand--color;
 //
 $header--active--background             : rgba(#fff, .9);
 $header--active--border-color           : rgba(#000, .25);
-$header--active--color                  : #000;
+$header--active--color                  : #191919;
 
 $header__item--active--hover--color     : $header__brand--color;
 $header__item--active--unfocused--color : rgba($header--active--color, .5);
@@ -41,7 +41,11 @@ $header__item--active--unfocused--color : rgba($header--active--color, .5);
   border-bottom: rem(1px) solid;
   position: fixed;
   width: 100vw;
-  text-align: center;
+  z-index: 1001;
+
+  @include bp-min-width-lg {
+    text-align: center;
+  }
 }
 
 .header__container {
@@ -61,7 +65,7 @@ $header__item--active--unfocused--color : rgba($header--active--color, .5);
 .header__brand,
 .header__item,
 .header__icon {
-  padding: rem(14px);
+  padding: .75rem;
   align-self: center;
   cursor: pointer;
 }

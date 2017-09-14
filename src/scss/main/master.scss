@@ -5,12 +5,14 @@
 //
 // Mixins
 //
+@import "../mixins/breakpoints";
 @import "../mixins/font";
 @import "../mixins/transform";
 @import "../mixins/transition";
 
 
 //
-// Sections
+// Components
 //
 @import "header";
+@import "sidemenu";

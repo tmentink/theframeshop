@@ -1,0 +1,56 @@
+// ------------------------------------------------------------------------
+// theframeshop: main/_sidemenu.scss
+// ------------------------------------------------------------------------
+
+
+// ------------------------------------------------------------------------
+// Variables
+// ------------------------------------------------------------------------
+
+//
+// initial state
+//
+$sidemenu--background         : #191919;
+$sidemenu--color              : rgba(#fff, .75);
+
+$sidemenu__item--border-color : rgba(#fff, .2);
+
+
+// ------------------------------------------------------------------------
+// Structure
+// ------------------------------------------------------------------------
+
+.sidemenu {
+  display: block;
+  position: fixed;
+  right: 0;
+  height: 100vh;
+  width: 100%;
+  max-width: rem(300px);
+  z-index: 1000;
+}
+
+.sidemenu__items {
+  margin-top: rem(50px);
+}
+
+.sidemenu__item {
+  display: block;
+  padding: .75rem 1rem;
+  border-bottom: rem(1px) solid;
+  cursor: pointer;
+}
+
+
+// ------------------------------------------------------------------------
+// Color
+// ------------------------------------------------------------------------
+
+.sidemenu {
+  background: $sidemenu--background;
+  color: $sidemenu--color;
+}
+
+.sidemenu__item {
+  border-color: $sidemenu__item--border-color;
+}
