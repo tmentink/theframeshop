@@ -1,0 +1,138 @@
+// ------------------------------------------------------------------------
+// theframeshop: main/_header.scss
+// ------------------------------------------------------------------------
+
+
+// ------------------------------------------------------------------------
+// Variables
+// ------------------------------------------------------------------------
+
+//
+// initial state
+//
+$header--background             : transparent;
+$header--border-color           : transparent;
+$header--color                  : #fff;
+
+$header__brand--color           : #2196F3;
+
+$header__item--hover--color     : $header--color;
+$header__item--unfocused--color : rgba($header--color, .5);
+
+$header__icon--hover--color     : $header__brand--color;
+
+//
+// active state
+//
+$header--active--background             : rgba(#fff, .9);
+$header--active--border-color           : rgba(#000, .25);
+$header--active--color                  : #000;
+
+$header__item--active--hover--color     : $header__brand--color;
+$header__item--active--unfocused--color : rgba($header--active--color, .5);
+
+
+// ------------------------------------------------------------------------
+// Structure
+// ------------------------------------------------------------------------
+
+.header {
+  display: flex;
+  border-bottom: rem(1px) solid;
+  position: fixed;
+  width: 100vw;
+  text-align: center;
+}
+
+.header__container {
+  display: flex;
+  margin: 0 auto;
+  max-width: rem(1200px);
+  width: 100%;
+  justify-content: space-between;
+}
+
+.header__items {
+  display: flex;
+  flex: 2;
+  width: 100%;
+}
+
+.header__brand,
+.header__item,
+.header__icon {
+  padding: rem(14px);
+  align-self: center;
+  cursor: pointer;
+}
+
+.header__brand {
+  width: rem(250px);
+}
+
+.header__item {
+  flex: 1 0 auto;
+}
+
+
+// ------------------------------------------------------------------------
+// Color
+// ------------------------------------------------------------------------
+
+.header {
+  background: $header--background;
+  border-color: $header--border-color;
+  color: $header--color;
+}
+
+.header--active {
+  background: $header--active--background;
+  border-color: $header--active--border-color;
+  color: $header--active--color;
+}
+
+.header__brand {
+  color: $header__brand--color;
+}
+
+
+// ------------------------------------------------------------------------
+// Effects
+// ------------------------------------------------------------------------
+
+.header {
+  @include transition("background, border-color", 0.2s, "ease-in-out");
+}
+
+.header__item,
+.header__icon {
+  @include transition("color", 0.2s, "ease-in-out");
+}
+
+.header__icon:hover {
+  color: $header__icon--hover--color;
+}
+
+.header {
+  &:hover {
+    .header__item {
+      color: $header__item--unfocused--color;
+    }
+  }
+
+  .header__item:hover {
+    color: $header__item--hover--color;
+  }
+}
+
+.header--active {
+  &:hover {
+    .header__item {
+      color: $header__item--active--unfocused--color;
+    }
+  }
+
+  .header__item:hover {
+    color: $header__item--active--hover--color;
+  }
+}
