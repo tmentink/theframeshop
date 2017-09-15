@@ -28,6 +28,10 @@ $sidemenu__item--border-color : rgba(#fff, .2);
   width: 100%;
   max-width: rem(300px);
   z-index: 1000;
+
+  &.hidden {
+    display: none;
+  }
 }
 
 .sidemenu__items {

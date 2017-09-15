@@ -29,7 +29,9 @@ module.exports = function(grunt) {
     },
     concat: {
       main: {
-        src: [],
+        src: ["src/js/util/**/*.js",
+              "src/js/main/**/*.js"
+             ],
         dest: "src/js/main.js"
       }
     },
