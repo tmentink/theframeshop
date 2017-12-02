@@ -14,15 +14,15 @@
 
   window.$cache = function (selector, context, reset) {
     if ("boolean" === typeof context) {
-      reset = context;
-      context = false;
+      reset = context
+      context = false
     }
-    var cacheKey = context ? context.selector + ' ' + selector : selector;
+    var cacheKey = context ? context.selector + " " + selector : selector
 
     if (undefined === SelectorCache[cacheKey] || reset) {
-      SelectorCache[cacheKey] = context ? context.find(selector) : jQuery(selector);
+      SelectorCache[cacheKey] = context ? context.find(selector) : jQuery(selector)
     }
-    return SelectorCache[cacheKey];
+    return SelectorCache[cacheKey]
   }
 
 

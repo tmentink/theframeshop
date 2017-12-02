@@ -1,0 +1,15 @@
+// ------------------------------------------------------------------------
+// theframeshop: base/_transition.scss
+// ------------------------------------------------------------------------
+
+@mixin transition($property: "all", $time: 0.2s, $easing: "ease-in", $delay: 0) {
+  -webkit-transition-property: #{$property};         
+  -webkit-transition-duration: #{$time};         
+  -webkit-transition-timing-function: #{$easing};            
+  -webkit-transition-delay: #{$delay};
+          
+  transition-property: #{$property};
+  transition-duration: #{$time};
+  transition-timing-function: #{$easing}; 
+  transition-delay: #{$delay};
+}

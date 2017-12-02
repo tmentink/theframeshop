@@ -12,6 +12,7 @@
 
   $(document).ready(function() {
     Header.init()
+    Hero.init()
     SideMenu.init()
   })
 

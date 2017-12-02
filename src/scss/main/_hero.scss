@@ -1,0 +1,104 @@
+// ------------------------------------------------------------------------
+// theframeshop: main/_hero.scss
+// ------------------------------------------------------------------------
+
+
+// ------------------------------------------------------------------------
+// Variables
+// ------------------------------------------------------------------------
+
+$hero--background          : #212121;
+$hero--color               : rgba(#fff, .9);
+
+$hero__header--font-family : "Asap Condensed", sans-serif;
+$hero__header--font-size   : rem(45px);
+
+$hero__image--duration     : 3s;
+$hero__image--easing       : cubic-bezier(0.680, -0.550, 0.265, 1.4);
+
+
+// ------------------------------------------------------------------------
+// Structure
+// ------------------------------------------------------------------------
+
+.hero {
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+}
+
+.hero__container {
+  padding: 0 1rem;
+  width: 100vw;
+  text-align: center;
+  @include absolute-center;
+}
+
+.hero__header {
+  margin: 0;
+}
+
+.hero__downArrow {
+  margin-top: 1.5rem;
+  padding: 2rem;
+  cursor: pointer;
+
+  @include bp-landscape-phone {
+    margin-top: 0;
+  }
+}
+
+.hero__image {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+
+// ------------------------------------------------------------------------
+// Font & Color
+// ------------------------------------------------------------------------
+
+.hero {
+  background: $hero--background;
+  color: $hero--color;
+}
+
+.hero__header {
+  font-family: $hero__header--font-family;
+  font-size: $hero__header--font-size;
+  line-height: 1.25;
+
+  @include bp-landscape-phone {
+    font-size: $hero__header--font-size * .8
+  }
+
+  @include bp-min-md {
+    font-size: $hero__header--font-size * 1.33
+  }
+}
+
+
+// ------------------------------------------------------------------------
+// Effects
+// ------------------------------------------------------------------------
+
+.hero__image {
+  opacity: 0;
+
+  @include transition("opacity", $hero__image--duration, $hero__image--easing);
+}
+
+.hero__image--active {
+  opacity: .5;
+}
+
+.hero__downArrow {
+  @include animation("bounce", 2s);
+}

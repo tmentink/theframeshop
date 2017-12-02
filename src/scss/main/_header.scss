@@ -13,8 +13,11 @@
 $header--background             : transparent;
 $header--border-color           : transparent;
 $header--color                  : #fff;
+$header--duration               : .5s;
+$header--easing                 : "ease";
+$header--font-family            : "Asap Condensed", sans-serif;
 
-$header__brand--color           : #2196F3;
+$header__brand--color           : #dc2e14;
 
 $header__item--hover--color     : $header--color;
 $header__item--unfocused--color : rgba($header--color, .5);
@@ -26,7 +29,7 @@ $header__icon--hover--color     : $header__brand--color;
 //
 $header--active--background             : rgba(#fff, .9);
 $header--active--border-color           : rgba(#000, .25);
-$header--active--color                  : #191919;
+$header--active--color                  : #212121;
 
 $header__item--active--hover--color     : $header__brand--color;
 $header__item--active--unfocused--color : rgba($header--active--color, .5);
@@ -39,11 +42,12 @@ $header__item--active--unfocused--color : rgba($header--active--color, .5);
 .header {
   display: flex;
   border-bottom: rem(1px) solid;
+  padding: 1rem 0rem;
   position: fixed;
   width: 100vw;
   z-index: 1001;
 
-  @include bp-min-width-lg {
+  @include bp-min-lg {
     text-align: center;
   }
 }
@@ -65,7 +69,7 @@ $header__item--active--unfocused--color : rgba($header--active--color, .5);
 .header__brand,
 .header__item,
 .header__icon {
-  padding: .75rem;
+  padding: 1rem;
   align-self: center;
   cursor: pointer;
 }
@@ -80,32 +84,20 @@ $header__item--active--unfocused--color : rgba($header--active--color, .5);
 
 
 // ------------------------------------------------------------------------
-// Color
+// Font & Color
 // ------------------------------------------------------------------------
 
 .header {
   background: $header--background;
   border-color: $header--border-color;
   color: $header--color;
-}
 
-.header--active {
-  background: $header--active--background;
-  border-color: $header--active--border-color;
-  color: $header--active--color;
+  font-family: $header--font-family;
+  font-size: 1.25rem;
 }
 
 .header__brand {
   color: $header__brand--color;
-}
-
-
-// ------------------------------------------------------------------------
-// Effects
-// ------------------------------------------------------------------------
-
-.header {
-  @include transition("background, border-color", 0.2s, "ease-in-out");
 }
 
 .header__item,
@@ -113,10 +105,9 @@ $header__item--active--unfocused--color : rgba($header--active--color, .5);
   @include transition("color", 0.2s, "ease-in-out");
 }
 
-.header__icon:hover {
-  color: $header__icon--hover--color;
-}
-
+//
+// Hover Colors
+//
 .header {
   &:hover {
     .header__item {
@@ -139,4 +130,24 @@ $header__item--active--unfocused--color : rgba($header--active--color, .5);
   .header__item:hover {
     color: $header__item--active--hover--color;
   }
+}
+
+.header__icon:hover {
+  color: $header__icon--hover--color;
+}
+
+
+// ------------------------------------------------------------------------
+// Effects
+// ------------------------------------------------------------------------
+
+.header {
+  @include transition("background, border-color, padding", $header--duration, $header--easing);
+}
+
+.header--active {
+  background: $header--active--background;
+  border-color: $header--active--border-color;
+  color: $header--active--color;
+  padding: 0;
 }

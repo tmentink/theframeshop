@@ -1,0 +1,113 @@
+// ------------------------------------------------------------------------
+// theframeshop: main/_footer.scss
+// ------------------------------------------------------------------------
+
+
+// ------------------------------------------------------------------------
+// Variables
+// ------------------------------------------------------------------------
+
+$footer--background         : #212121;
+$footer--color              : rgba(#fff, .8);
+$footer--accent-color       : #dc2e14;
+
+$footer__social--background : #737373;
+$footer__social--color      : $footer--background;
+
+$footer__base--background   : #191919;
+$footer__base--color        : $footer__social--background;
+
+
+// ------------------------------------------------------------------------
+// Structure
+// ------------------------------------------------------------------------
+
+.footer {
+  padding-top: 3rem;
+  width: 100vw;
+  text-align: center;
+}
+
+.footer__divider {
+  margin: .75rem auto;
+  width: 3rem;
+}
+
+.footer__address,
+.footer__contact {
+  margin-bottom: 1.5rem;
+}
+
+.footer__social {
+  margin-top: 2rem;
+  margin-bottom: 2.5rem;
+}
+
+.footer__base {
+  padding: 1rem 0;
+  text-align: center;
+}
+
+.footer__base-container {
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  max-width: rem(400px);
+}
+
+.footer__base-item {
+  padding: 0 .5rem;
+  flex: 1 1 auto;
+}
+
+
+// ------------------------------------------------------------------------
+// Font & Color
+// ------------------------------------------------------------------------
+
+.footer {
+  background: $footer--background;
+  color: $footer--color;
+}
+
+.footer__address {
+  a {
+    color: $footer--accent-color;
+  }
+
+  .fa-map-marker {
+    color: $footer--accent-color;
+    font-size: 1.25rem;
+  }
+}
+
+.footer__contact {
+  a {
+    color: $footer--color;
+
+    &:hover {
+      color: lighten($footer--color, 10%);
+    }
+  }
+}
+
+.footer__social {
+  .button {
+    background: $footer__social--background;
+    color: $footer__social--color;
+  }
+}
+
+.footer__base {
+  color: $footer__base--color;
+  font-size: rem(14px);
+
+  a {
+    color: $footer__base--color;
+
+    &:hover {
+      color: lighten($footer__base--color, 10%);
+    }
+  }
+}

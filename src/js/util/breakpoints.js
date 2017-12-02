@@ -2,6 +2,7 @@
 // theframeshop: util/breakpoints.js
 // ------------------------------------------------------------------------
 
+// eslint-disable-next-line no-unused-vars
 var BP = {
   min_sm: window.matchMedia("(min-width: 576px)"),
   min_md: window.matchMedia("(min-width: 768px)"),

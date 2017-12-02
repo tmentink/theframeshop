@@ -29,14 +29,17 @@ module.exports = function(grunt) {
     },
     concat: {
       main: {
-        src: ["src/js/util/**/*.js",
+        src: ["src/js/vendor/**/*.js",
+              "src/js/util/**/*.js",
               "src/js/main/**/*.js"
              ],
         dest: "src/js/main.js"
       }
     },
     eslint: {
-      target: ["src/js/**/*.js"]
+      target: ["src/js/**/*.js",
+               "!src/js/vendor/**/*.js"
+              ]
     },
     sass: {
       main: {
@@ -60,6 +63,15 @@ module.exports = function(grunt) {
       }
     },
     uglify: {
+      // options: {
+      //   beautify: true,
+      //   compress: false,
+      //   mangle: false,
+      //   output: {
+      //     indent_level: 2,
+      //     comments: /\*/
+      //   }
+      // },
       main: {
         src: "<%= concat.main.dest %>",
         dest: "dist/js/main.js",
@@ -70,6 +82,7 @@ module.exports = function(grunt) {
   require("load-grunt-tasks")(grunt)
   require("time-grunt")(grunt)
 
-  grunt.registerTask("default", ["concat", "babel", "stamp", "uglify", "sass", "clean"])
+  grunt.registerTask("clear", ["clean"])
+  grunt.registerTask("default", ["eslint", "concat", "babel", "stamp", "uglify", "sass", "clean"])
   grunt.registerTask("lint", ["eslint"])
 }

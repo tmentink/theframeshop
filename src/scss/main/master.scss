@@ -1,14 +1,21 @@
 // ------------------------------------------------------------------------
-// theframeshop: mina/master.scss
+// theframeshop: main/master.scss
 // ------------------------------------------------------------------------
 
 //
-// Mixins
+// Vendor
 //
-@import "../mixins/breakpoints";
-@import "../mixins/font";
-@import "../mixins/transform";
-@import "../mixins/transition";
+
+
+//
+// Base
+//
+@import "../base/animations";
+@import "../base/breakpoints";
+@import "../base/font";
+@import "../base/reset";
+@import "../base/transform";
+@import "../base/transition";
 
 
 //
@@ -16,3 +23,5 @@
 //
 @import "header";
 @import "sidemenu";
+@import "hero";
+@import "footer";

@@ -7,20 +7,41 @@ var Header = ((Header) => {
 
 
   // ----------------------------------------------------------------------
+  // Constants
+  // ----------------------------------------------------------------------
+
+  const ClassName = {
+    ACTIVE : "header--active"
+  }
+
+  const Selector = {
+    HEADER      : "#header",
+    HERO        : "#hero",
+    HERO_HEADER : ".hero__header"
+  }
+
+
+  // ----------------------------------------------------------------------
   // Public Methods
   // ----------------------------------------------------------------------
-  
-  Header.toggleActiveStyles = function(toggle) {
-    $cache("#header").toggleClass("header--active", toggle)
+
+  Header.getHeight = function() {
+    return $cache(Selector.HEADER).height()
+  }
+
+  Header.toggleActiveStyles = function() {
+    const heroOffset = Hero.getHeaderTop() - 100
+    const toggle     = $cache(document).scrollTop() >= heroOffset
+    $cache(Selector.HEADER).toggleClass(ClassName.ACTIVE, toggle)
   }
 
 
   // ----------------------------------------------------------------------
   // Init
   // ----------------------------------------------------------------------
-  
-  Header.init = function() {
 
+  Header.init = function() {
+    $cache(document).on("scroll", Header.toggleActiveStyles)
   }
 
 
